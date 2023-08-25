@@ -1,0 +1,24 @@
+use oficina;
+/*insert into clientes 
+	values (1,'59753221600000','sergio almeida araujo', 'rua lima e silva, 489, pituba','71993269870','sergioalmeidaaraujo@gmail.com');
+
+insert into veiculos 
+	values (1,'Peugeot','2008', 'ABC-3119',1);
+    
+insert into ordemservico
+	values (1,1,'2023-08-25 14:59', 11000,1);
+SELECT * FROM ordemservico; 
+ 
+ insert into itensos
+	values (1,1,'SERVIÇO', 'CONSERTO DO MOTOR',50,10),
+		   (2,1,'PEÇA', 'REBIMBOCA DA PARAFUSETA',500,1);*/
+           
+SELECT IDORDEMSERVICO,NOME,CPF_CNPJ,ENDERECO,TELEFONE,EMAIL,MARCA,MODELO,PLACA,DATA_CHEGADA,KMCHEGADA
+FROM ORDEMSERVICO O INNER JOIN CLIENTES C ON O.CLIENTES_IDCLIENTES = C.IDCLIENTES 
+INNER JOIN VEICULOS V ON V.IDVEICULOS = O.VEICULOS_IDVEICULOS;
+
+SELECT IDITENSOS AS ITEM, TIPOITEM,DESCRICAOITEM AS DESCRICAO, VALORUNITARIO, QUANTIDADE,VALORUNITARIO * QUANTIDADE VALORTOTAL 
+FROM ITENSOS  
+
+    
+
